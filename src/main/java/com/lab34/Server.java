@@ -23,7 +23,7 @@ public class Server {
         String inputLine;
 
         while ((inputLine = in.readLine()) != null) {
-            if ("exit".equals(inputLine)) {
+            if ("close".equals(inputLine)) {
                 this.stop();
                 break;
             }

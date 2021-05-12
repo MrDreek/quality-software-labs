@@ -15,8 +15,8 @@ public class Main {
         while (sc.hasNext()) {
             var input = sc.nextLine();
 
-            if (input.equals("exit")) {
-                client.sendMessage("exit");
+            if (input.equals("close")) {
+                client.sendMessage("close");
                 client.stopConnection();
                 return;
             }
