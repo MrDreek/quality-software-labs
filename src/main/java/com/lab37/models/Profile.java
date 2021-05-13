@@ -4,6 +4,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import static java.lang.Math.round;
+
 @XmlRootElement(name = "profile")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Profile {
@@ -15,7 +17,8 @@ public class Profile {
         this.colories = 0;
     }
 
-    public Profile() {}
+    public Profile() {
+    }
 
     public String getName() {
         return name;
@@ -26,15 +29,16 @@ public class Profile {
     }
 
     public double getColories() {
-        return colories;
+        return Math.round(colories * 100.0) / 100.0;
     }
 
     public void setColories(double colories) {
+        colories = Math.round(colories * 100.0) / 100.0;
         this.colories = colories;
     }
 
     public void increaseSum(double value) {
-        this.colories += value;
+        this.setColories(this.colories + value);
     }
 
 }

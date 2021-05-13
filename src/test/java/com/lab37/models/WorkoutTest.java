@@ -10,6 +10,9 @@ class WorkoutTest {
     void calcCalories() {
         Workout w = new Workout("Test", 200.0);
 
-        assertEquals(w.calcCalories(123.0), 6.833333333333333);
+        var result = Math.round(w.calcCalories(123.0) * 100.0) / 100.0;
+        var expect = 6.83;
+
+        assertEquals(result, expect);
     }
 }

@@ -10,6 +10,9 @@ class CircleTest {
     void getArea() {
         Circle c = new Circle(3);
 
-        assertEquals(c.getArea(), 28.274333882308138);
+        var result = Math.round(c.getArea() * 100.0) / 100.0;
+        var expect = 28.27;
+
+        assertEquals(result, expect);
     }
 }
